@@ -86,7 +86,7 @@ public class FishFinder {
 			}
 			
 			printSchoolMatrix(school);
-			System.out.println(String.format("\t\tCenter of mass [%s, %s]\t\t%s\n", (totalx/totalMass), (totaly/totalMass), totalMass-1));
+			System.out.println(String.format("\tCenter of mass [%s, %s] | Total mass : %s\n", (totalx/totalMass), (totaly/totalMass), totalMass-1));
 		}
 	}
 	
