@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Stack;
 
@@ -35,7 +36,7 @@ public class FishFinder {
 		while( allSpots.size() > 0 )
 		{
 		Stack<FishSpot> spotStack = new Stack<FishSpot>();
-		LinkedList<FishSpot> spots = new LinkedList<FishSpot>();
+		ArrayList<FishSpot> spots = new ArrayList<FishSpot>();
 		FishSpot spot = allSpots.pop();
 		spotStack.push(spot);
 		spots.add(spot);
@@ -200,7 +201,7 @@ public class FishFinder {
 		return false;
 	}
 	
-	private void addSpot(FishSpot spot, LinkedList<FishSpot> spots, Stack<FishSpot> spotStack)
+	private void addSpot(FishSpot spot, ArrayList<FishSpot> spots, Stack<FishSpot> spotStack)
 	{
 		spots.add(spot);
 		spotStack.push(spot);

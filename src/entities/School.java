@@ -1,13 +1,13 @@
 package entities;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 public class School {
-	public LinkedList<FishSpot> spots;
+	public ArrayList<FishSpot> spots;
 	public int totalMass = 0;
 	
-	public School(LinkedList<FishSpot> spots) {
-		this.spots = spots;
+	public School(ArrayList<FishSpot> container) {
+		this.spots = container;
 	}
 	
 }
