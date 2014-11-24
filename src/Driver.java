@@ -10,7 +10,6 @@ public class Driver {
 		
 		if ( chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION )
 			finder = new FishFinder( ReadMatrix.readMatrixFromFile(chooser.getSelectedFile()) );
-//		finder = new FishFinder( ReadMatrix.readMatrixFromFile(new File("fishschools2.txt")) );
 		
 		finder.findFishingSpots();
 		finder.determineSchools();
