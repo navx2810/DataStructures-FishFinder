@@ -65,11 +65,7 @@ public class FishFinder {
 			}
 			else
 				spot = spotStack.pop();	
-
 		}
-		
-		for(School school: schools)
-			printSchoolMatrix(school);
 		
 	}
 	
@@ -89,7 +85,7 @@ public class FishFinder {
 			}
 			
 			printSchoolMatrix(school);
-			System.out.println(String.format("\t\tCenter of mass [%s, %s]\t\t%s\n", (totalx/totalMass), (totaly/totalMass), totalMass));
+			System.out.println(String.format("\t\tCenter of mass [%s, %s]\t\t%s\n", (totalx/totalMass), (totaly/totalMass), totalMass-1));
 		}
 	}
 	
@@ -152,7 +148,7 @@ public class FishFinder {
 	}
 
 	private boolean pointIsInRange(int x, int y) {
-		if( x > 0 && y > 0 && x < matrix.length && y < matrix[0].length)
+		if( x >= 0 && y >= 0 && x < matrix.length && y < matrix[0].length)
 			return true;
 		return false;
 	}
@@ -197,13 +193,6 @@ public class FishFinder {
 		return fishingSpotMatrix[spot.x+1][spot.y+1];
 	}
 	
-//	private boolean adjacentsAreEmpty(FishSpot spot)
-//	{
-//		if ( isNorthEmpty(spot) && isNorthEastEmpty(spot) && isEastEmpty(spot) && isSouthEastEmpty(spot) && isSouthEastEmpty(spot) && isSouthWestEmpty(spot) && isWestEmpty(spot) )
-//			return true;
-//		return false;
-//	}
-	
 	private boolean haveIVisisted(FishSpot spot)
 	{
 		if ( visited[spot.x][spot.y] )
@@ -213,34 +202,17 @@ public class FishFinder {
 	
 	private void addSpot(FishSpot spot, LinkedList<FishSpot> spots, Stack<FishSpot> spotStack)
 	{
-		printMatrix(spot);
 		spots.add(spot);
 		spotStack.push(spot);
 		visited[spot.x][spot.y] = true;
 		
 		allSpots.remove(spot);
 	}
+	
 	private void fillFishingSpotMatrix() {
 		for (FishSpot spot : allSpots)
 			fishingSpotMatrix[spot.x][spot.y] = spot;
 		
-	}
-	
-	private void printMatrix(FishSpot spot)
-	{
-		for(int x = 0; x < matrix.length; x++)
-		{
-			System.out.print("\n| ");
-			for(int y = 0; y < matrix[0].length; y++)
-				if ( x == spot.x && y == spot.y )
-					System.out.print("D ");
-				else
-					System.out.print(matrix[x][y] + " ");
-			System.out.print("|");
-		}
-		System.out.println("\n");
-			
-				
 	}
 	
 	private void printSchoolMatrix(School school)
