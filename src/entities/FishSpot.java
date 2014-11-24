@@ -1,14 +1,13 @@
 package entities;
 
-import java.awt.Point;
-
 public class FishSpot {
 	public int mass;
-	public Point location;
+	public int x, y;
 	
 	public FishSpot(int x, int y, int mass)
 	{
-		location = new Point(x, y);
+		this.x = x;
+		this.y = y;
 		this.mass = mass;
 	}
 }

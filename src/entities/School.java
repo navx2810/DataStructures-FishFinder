@@ -6,11 +6,8 @@ public class School {
 	public LinkedList<FishSpot> spots;
 	public int totalMass = 0;
 	
-	public School() {}
-	
-	public void calculateTotalMass()
-	{
-		for(FishSpot spot : spots)
-			totalMass += spot.mass;
+	public School(LinkedList<FishSpot> spots) {
+		this.spots = spots;
 	}
+	
 }
