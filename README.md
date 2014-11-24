@@ -8,6 +8,6 @@ This projects calls for
 
 - [ ] using a Depth-first or Breadth-first search algorithm to determine schools of fishes
 
-- [ ] determine the total mass of a school of fish
+- [x] determine the total mass of a school of fish
 
-- [ ] determine the center of the mass of the school of fish ( as a point )
+- [x] determine the center of the mass of the school of fish ( as a point )
